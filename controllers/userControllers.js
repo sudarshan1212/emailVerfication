@@ -61,12 +61,11 @@ const sigupUser = expressAsyncHandler(async (req, res) => {
     dateOfBirth,
     verified: false,
   });
-  res.status(200).json(
+ 
     sendVerificationEmail(user, res)
     // {status: "Sucess",
     // message: "Stored",
     // data: user,}
-  );
 });
 const sendVerificationEmail = ({ email, _id }, res) => {
   const url = "http://localhost:5001";
